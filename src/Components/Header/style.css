@@ -1,0 +1,42 @@
+.container-header{
+    background: linear-gradient(rgb(232 234 235 / 65%), rgb(100 104 106 / 56%)), 
+    url('https://img.freepik.com/vector-gratis/ejemplo-tienda-electronica-interior-departamento-tienda-aplicaciones-consumidor-alameda-comercial_33099-791.jpg?w=1380&t=st=1679573406~exp=1679574006~hmac=3887b67');
+    margin: -8px;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+}
+.title-header{
+    font-size: 2.5rem;
+    margin-left: 12px;
+    letter-spacing: 1px;
+    text-shadow:0 0 8px #8c35ff, 0 0 12px #8c35ff;
+}
+.img-cart-header,.disable-img-cart-header{
+    width: 60px;
+    height: 60px;
+    border-radius:10px;
+    display: flex;
+    cursor:pointer;
+}
+.disable-img-cart-header{
+    pointer-events: none;
+    cursor: none;
+}
+.products-quantity{
+    color: black;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 60px;
+}
+.container-cart-shop{
+    text-shadow: 0 0 12px #fff, 0 0 6px #fff;
+    display: flex;
+    align-content: baseline;
+    align-self: self-end;
+    margin-bottom: -30px;
+}
