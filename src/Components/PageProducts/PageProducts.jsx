@@ -4,7 +4,7 @@ import { ProductList } from "../ProductList/ProductList"
 import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch } from 'react-redux'
-import { addProducts } from '../../app/features/Product.slice'
+import { addProducts, productAdded } from '../../app/features/Product.slice'
 
 export const PageProducts = () => {
     
@@ -22,6 +22,7 @@ export const PageProducts = () => {
     },[])
    const addProduct = (product) => {
     dispatch(addProducts(product))
+    dispatch(productAdded(true))
    }
   
     return(

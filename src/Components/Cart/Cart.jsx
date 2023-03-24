@@ -9,7 +9,7 @@ export const Cart = ({closeModalCart}) => {
    const dispatch = useDispatch()
    
    useEffect(() => {
-    // Crear un array unico con propiedad cantidad a partir de items
+    // Crear un array unico con propiedad cantidad a partir de products
     const productsCart = products.map(item => { return { ...item, quantity: products.filter(e => e.name === item.name).length } })
     const setProducts = new Set(productsCart.map(JSON.stringify))
     setQuantity(Array.from(setProducts).map(JSON.parse))
@@ -19,8 +19,16 @@ export const Cart = ({closeModalCart}) => {
       dispatch(addProducts(product))
        }
     const deleteProduct = (product)=>{
-        const deleteItem = quantity.map(item => { return { ...item, quantity: product.quantity - 1 } })
-        setQuantity(deleteItem)
+        const itemPosition = products.indexOf(products.find(el => el.name === product.name))
+        if(product.quantity > 1){
+       product.quantity = product.quantity  -1
+       setQuantity([...quantity])
+        const deleteProduct = products.filter((_, i) => products.indexOf(products[itemPosition]) !== i)
+         dispatch(deleteProducts(deleteProduct))
+        } else {
+          setQuantity(quantity.filter((_, i) => quantity.indexOf(products[itemPosition]) !== i))
+          setItems(items.filter((_, i) => items.indexOf(items[positionArr]) !== i))
+        }
     }
 
    return(

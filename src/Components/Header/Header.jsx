@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import './style.css'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Cart } from '../Cart/Cart'
+import { showCart } from '../../app/features/Product.slice'
+
 export const Header = ({img}) => {
-    const [showCart , setShowCart ] = useState(false)
+     const show = useSelector(store => store.showCart)
     const products = useSelector(state => state.products).length
-    
+    const dispatch = useDispatch()
+    console.log(show)
     const classCart = products === 0 ? 'disable-img-cart-header' : 'img-cart-header'
     const shopCart = () => {
-        setShowCart(true)
+        dispatch(showCart(true))
     }
     const closeModal = () => {
-        setShowCart(false)
+        dispatch(showCart(false))
     }
     return(
         <div className='container-header'>
@@ -20,7 +23,7 @@ export const Header = ({img}) => {
         <span className='products-quantity'>{products}</span>
         <img onClick={shopCart} className ={classCart} src={img} alt='cart' />
         </div>
-        { showCart ? <Cart 
+        { show ? <Cart 
         closeModalCart={closeModal}/> : ''}
         </div>
     )
