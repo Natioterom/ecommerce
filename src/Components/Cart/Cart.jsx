@@ -42,7 +42,7 @@ export const Cart = ({closeModalCart}) => {
             <img className= 'image-product-cart' src={product.image} />
             <p className='name-product-cart'>{product.name}</p>
             <div className='container-price-button'>
-            <p className='price-product-cart'>$ {product.price * product.quantity}</p>
+            <p className='price-product-cart'>$ {(product.price * product.quantity).toFixed(2)}</p>
             <button onClick={()=>{deleteProduct(product)}} className='delete-product-cart'>-</button>
             <span>{product.quantity}</span>
             <button onClick={()=>{addProduct(product)}} className='add-more-product-cart'>+</button>
