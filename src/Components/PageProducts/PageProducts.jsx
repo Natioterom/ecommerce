@@ -3,11 +3,11 @@ import axios from "axios"
 import { ProductList } from "../ProductList/ProductList"
 import { useState } from "react"
 import { useEffect } from "react"
-import { useDispatch } from 'react-redux'
-import { addProducts, productAdded } from '../../app/features/Product.slice'
+import { useDispatch} from 'react-redux'
+import { addProducts } from '../../app/features/Product.slice'
 
 export const PageProducts = () => {
-    
+   
     const [ db, setDb ] = useState([])
     const dispatch = useDispatch()
 
@@ -20,9 +20,9 @@ export const PageProducts = () => {
         }
      data()
     },[])
+
    const addProduct = (product) => {
     dispatch(addProducts(product))
-    dispatch(productAdded(true))
    }
   
     return(

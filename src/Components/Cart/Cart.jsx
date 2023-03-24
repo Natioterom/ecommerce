@@ -1,6 +1,6 @@
 import './styles.css'
 import { useDispatch, useSelector } from "react-redux"
-import { addProducts, deleteProducts } from '../../app/features/Product.slice'
+import { addProducts, deleteProducts} from '../../app/features/Product.slice'
 import { useState, useEffect } from 'react'
 
 export const Cart = ({closeModalCart}) => {
@@ -27,8 +27,10 @@ export const Cart = ({closeModalCart}) => {
          dispatch(deleteProducts(deleteProduct))
         } else {
           setQuantity(quantity.filter((_, i) => quantity.indexOf(products[itemPosition]) !== i))
-          setItems(items.filter((_, i) => items.indexOf(items[positionArr]) !== i))
+          const deleteProduct = products.filter((_, i) => products.indexOf(products[itemPosition]) !== i)
+         dispatch(deleteProducts(deleteProduct))
         }
+        
     }
 
    return(

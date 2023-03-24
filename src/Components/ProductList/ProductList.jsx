@@ -1,5 +1,7 @@
 import './style.css'
+
 export const ProductList = ({image, name, price, stock, addProduct}) => {
+
 const classButton = stock === 0 ? 'disable-button-add-product' : 'button-add-product'
 const textButton = classButton === 'disable-button-add-product' ? 'Out of stock' : 'Add to car'
     return(

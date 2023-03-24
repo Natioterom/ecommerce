@@ -8,7 +8,8 @@ export const Header = ({img}) => {
      const show = useSelector(store => store.showCart)
     const products = useSelector(state => state.products).length
     const dispatch = useDispatch()
-    console.log(show)
+
+    
     const classCart = products === 0 ? 'disable-img-cart-header' : 'img-cart-header'
     const shopCart = () => {
         dispatch(showCart(true))
