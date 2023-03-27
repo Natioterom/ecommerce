@@ -7,8 +7,8 @@ const textButton = classButton === 'disable-button-add-product' ? 'Out of stock'
     return(
         <article className='art-products-list'>
         <div className='container-products-list'>
-            <p className='product-brand'>{brand}</p>
             <img className='product-img' src={image} alt={name} />
+            <p className='product-brand'>{brand}</p>
             <h2 className='product-name'>{name}</h2>
             <div className='container-price-button-product'>
             <p className='product-price'>{price}</p>
