@@ -32,6 +32,7 @@ export const PageProducts = () => {
                     <div className ='products-page' key={product.id}> 
                     <ProductList 
                     name={product.name}
+                    brand={product.brand}
                     image={product.image}
                     price={`$ ${product.price}`}
                     stock={product.countInStock}

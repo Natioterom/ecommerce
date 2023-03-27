@@ -1,6 +1,8 @@
 .container-header{
     background: linear-gradient(rgb(232 234 235 / 65%), rgb(100 104 106 / 56%)), 
-    url('https://img.freepik.com/vector-gratis/ejemplo-tienda-electronica-interior-departamento-tienda-aplicaciones-consumidor-alameda-comercial_33099-791.jpg?w=1380&t=st=1679573406~exp=1679574006~hmac=3887b67');
+    url('https://bandurriadeco.com.ar/tienda/wp-content/uploads/2020/06/Fondo.Plantas.10.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: -8px;
     width: 100%;
     color: white;
@@ -17,7 +19,7 @@
     font-size: 2.5rem;
     margin-left: 12px;
     letter-spacing: 1px;
-    text-shadow:0 0 8px #8c35ff, 0 0 12px #8c35ff;
+    text-shadow:0 0 8px #105210;
 }
 .img-cart-header,.disable-img-cart-header{
     width: 60px;

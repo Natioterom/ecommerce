@@ -19,7 +19,7 @@ export const Header = ({img}) => {
     }
     return(
         <div className='container-header'>
-        <h1 className='title-header'>TecnoTech</h1>
+        <h1 className='title-header'>DecoPlant's</h1>
         <div className='container-cart-shop'>
         <span className='products-quantity'>{products}</span>
         <img onClick={shopCart} className ={classCart} src={img} alt='cart' />

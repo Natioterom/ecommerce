@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header 
-      img= {('../public/cart.png')}/>
+      img= {('cart.png')}/>
       <PageProducts />
     </div>
   )
