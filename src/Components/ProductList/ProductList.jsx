@@ -3,7 +3,7 @@ import './style.css'
 export const ProductList = ({image, name,brand, price, stock, addProduct}) => {
 
 const classButton = stock === 0 ? 'disable-button-add-product' : 'button-add-product'
-const textButton = classButton === 'disable-button-add-product' ? 'Out of stock' : 'Add to car'
+const textButton = classButton === 'disable-button-add-product' ? 'Sin stock' : 'Añadir al carrito'
     return(
         <article className='art-products-list'>
         <div className='container-products-list'>

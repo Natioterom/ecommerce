@@ -22,7 +22,7 @@
     font-weight: bold;
 }
 .price-product-cart{
- color:black;
+ color:#444;
 }
 .close-cart{
     font-weight: bold;
@@ -33,9 +33,31 @@
     margin-left: 220px;
     border: none;
     font-size: 1rem;
+    cursor: pointer;
 }
 .container-price-button{
     display:flex;
     align-items: center;
     justify-content: space-between;
+}
+.container-total-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.total-bill{
+    color:black;
+    font-weight: bold;
+}
+.btn-buy{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: #408cd9;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-buy:hover, .close-cart:hover{
+    background-color: #1c4976;
 }

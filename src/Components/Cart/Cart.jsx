@@ -15,13 +15,17 @@ export const Cart = ({closeModalCart}) => {
     setQuantity(Array.from(setProducts).map(JSON.parse))
   }, [products])
 
+  //Añadir productos al carrito
    const addProduct= (product) =>{
       dispatch(addProducts(product))
        }
+  //Eliminar productos del carrito
     const deleteProduct = (product)=>{
+      //Se busca la posición del elemento que se selecciono 
         const itemPosition = products.indexOf(products.find(el => el.name === product.name))
         if(product.quantity > 1){
        product.quantity = product.quantity  -1
+       //Set del array  con el nuevo valor de quantity
        setQuantity([...quantity])
         const deleteProduct = products.filter((_, i) => products.indexOf(products[itemPosition]) !== i)
          dispatch(deleteProducts(deleteProduct))
@@ -32,10 +36,12 @@ export const Cart = ({closeModalCart}) => {
         }
         
     }
+    const price = quantity.map(ele => ele.price * ele.quantity)
+    const totalPrice = price.reduce((el, acc) => el + acc ,0)
 
    return(
      <article className='container-cart-products'>
-         <button onClick ={closeModalCart} className='close-cart'>Close</button>
+         <button onClick ={closeModalCart} className='close-cart'>Cerrar</button>
         { quantity.map((product) =>{
         return(
             <div key={product.id} className='cart-products'> 
@@ -51,6 +57,10 @@ export const Cart = ({closeModalCart}) => {
         )
      })
       }
+      <div className='container-total-btn'>
+      <h3 className='total-bill'>Total: ${totalPrice.toFixed(2)}</h3>
+      <button className='btn-buy'>Comprar</button>
+      </div>
      </article>
    )
 }
