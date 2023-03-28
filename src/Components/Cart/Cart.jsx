@@ -1,13 +1,14 @@
 import './styles.css'
 import { useDispatch, useSelector } from "react-redux"
-import { addProducts, deleteProducts} from '../../app/features/Product.slice'
+import { addProducts, deleteProducts, total, finalQuantity, showCart} from '../../app/features/Product.slice'
 import { useState, useEffect } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 export const Cart = ({closeModalCart}) => {
+
    const products = useSelector(state => state.products)
    const [ quantity, setQuantity ] = useState([])
    const dispatch = useDispatch()
-   
+   const navigate = useNavigate()
    useEffect(() => {
     // Crear un array unico con propiedad cantidad a partir de products
     const productsCart = products.map(item => { return { ...item, quantity: products.filter(e => e.name === item.name).length } })
@@ -38,7 +39,14 @@ export const Cart = ({closeModalCart}) => {
     }
     const price = quantity.map(ele => ele.price * ele.quantity)
     const totalPrice = price.reduce((el, acc) => el + acc ,0)
-
+    
+    const buy = () => {
+    dispatch(total(totalPrice))
+    dispatch(finalQuantity(quantity))
+    navigate('/purchase')
+    dispatch(showCart(false))
+    }
+ 
    return(
      <article className='container-cart-products'>
          <button onClick ={closeModalCart} className='close-cart'>Cerrar</button>
@@ -59,7 +67,7 @@ export const Cart = ({closeModalCart}) => {
       }
       <div className='container-total-btn'>
       <h3 className='total-bill'>Total: ${totalPrice.toFixed(2)}</h3>
-      <button className='btn-buy'>Comprar</button>
+      <button className='btn-buy' onClick={buy}>Comprar</button>
       </div>
      </article>
    )

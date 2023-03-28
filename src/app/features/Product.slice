@@ -19,9 +19,15 @@ const productSlice = createSlice({
     },
      deleteProducts: (state , actions) => {
        state.products = actions.payload
+    },
+    total: (state, actions) => {
+      state.total = actions.payload
+    },
+    finalQuantity: (state, actions) => {
+      state.finalQuantity = actions.payload
     }
   }
 })
 
-export const {showCart, addProducts, productAdded, deleteProducts} =  productSlice.actions
+export const {showCart, addProducts, productAdded, deleteProducts, total,  finalQuantity} =  productSlice.actions
 export default  productSlice.reducer
