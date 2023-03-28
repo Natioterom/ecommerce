@@ -25,7 +25,7 @@ import './style.css'
                 )
             })}
         </div>
-        <h1 className='title-total-purchase'> Total Compra: ${total}   </h1>
+        <h1 className='title-total-purchase'> Total Compra: ${(total).toFixed(2)}   </h1>
         <button className='btn-total-purchase' onClick={backToLandingPage}>Volver</button>
         </article>
         </>
